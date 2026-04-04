@@ -1,0 +1,263 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Wedding-themed serif fonts with excellent Cyrillic support for Kazakh */
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    background-color: #fafafa;
+    color: #003153; /* Prussian Blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    /* padding: 20px; */
+}
+
+/* 1. Define the animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fade-item {
+  /* Apply the animation smoothly and keep the final state (both) */
+  animation: fadeInUp linear both;
+  
+  /* Link the animation to the element crossing the viewport */
+  animation-timeline: view();
+  
+  /* * animation-range controls exactly WHEN it animates.
+   * 'entry 0%' means start the animation exactly when the top of the element hits the bottom of the screen.
+   * 'cover 30%' means finish the animation when the element is 30% of the way up the screen.
+   */
+  animation-range: entry 0% cover 30%; 
+}
+
+#main-image-container img {
+  width: -webkit-fill-available;
+}
+
+#main-image-container {
+    /* Set a fixed height so the container becomes scrollable */
+  max-height: 400px;
+  width: 100vw;
+
+  /* * THE MASK: 
+   * Solid black means fully visible, transparent means hidden.
+   * This gradient stays fixed to the container. As the image scrolls up, 
+   * the bottom of the image moves into the transparent zone and fades out.
+   */
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* Card styling */
+.invitation-card {
+    /* background-color: #ffffff; */
+    width: 100%;
+    /* height: 100vh; */
+    /* max-width: 500px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    /* border-radius: 15px; */
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); */
+    text-align: center;
+    /* border: 2px solid #e0d0b8; /* Subtle gold/tan border */ */
+}
+
+/* Typography */
+h1 {
+    font-size: 2rem;
+    color: #0f4d92; /* Yale Blue */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #007ba7; /* Cerulean */
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.names h2 {
+    font-size: 2.5rem;
+    color: #000080; /* Deep Navy */
+    margin-bottom: 30px;
+}
+
+.ampersand {
+    color: #007ba7; /* Cerulean */
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+/* Details section */
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detail-item {
+    margin-bottom: 20px;
+}
+
+.detail-item h3 {
+    font-size: 1.2rem;
+    color: #0f4d92; /* Yale Blue */
+    margin-bottom: 5px;
+}
+
+.detail-item p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.footer p {
+    font-size: 2rem;
+    font-style: italic;
+    color: #003153; /* Prussian Blue */
+    border-top: 1px solid #007ba7; /* Cerulean */
+    padding: 20px 30px;
+    margin: 10px 40px;
+    height: 150px;
+}
+
+/* Mobile compatibility (Responsive) */
+@media (max-width: 480px) {
+    .invitation-card {
+        padding: 0px 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .names h2 {
+        font-size: 2rem;
+    }
+
+    .detail-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .detail-item p {
+        font-size: 1rem;
+    }
+
+    .calendar-card {
+        width: 320px !important;
+    }
+}
+
+.calendar-card {
+      width: 480px;
+      background-color: #ffffff; /* White */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 25px;
+      box-sizing: border-box;
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #000080; /* Deep Navy */
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  gap: 5px; /* Minimal spacing between days */
+}
+
+.day-name {
+  font-weight: bold;
+  color: #007ba7; /* Cerulean */
+  padding-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.calendar-date {
+  aspect-ratio: 1; /* Keep days square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: #000000; /* Black */
+  cursor: default; /* No pointer on dates */
+}
+
+/* Circle style for the specific date */
+/* .circled-date img { */
+/*     width: 7rem; */
+/*     left: 39%; */
+/*     bottom: 28%; */
+/*     position: fixed; */
+/* } */
+
+.circled-date {
+  font-weight: bold;
+  width: 100%; /* Circle takes full width/height of square cell */
+  height: 100%;
+  align-content: center;
+  background-image: url('./assets/images/wedding-rings-small.webp');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain; /* Resize the background image to cover the entire container */
+  color: #ea1212;
+  font-size: 0.8rem;
+}
+/**/
+/* .circled-date p { */
+/*     z-index: 1; */
+/* } */
+/**/
+/* .heart { */
+/*   width: 25px ; */
+/*   height: 25px ; */
+/*   background-color: #ff4d4d ; */
+/*   transform: rotate(45deg) ; */
+/*   position: absolute; */
+/* } */
+/* .heart::after , .heart::before { */
+/*   content: "" ; */
+/*   width: 25px ; */
+/*   height: 25px ; */
+/*   position: absolute ; */
+/*   border-radius: 100% ; */
+/*   background-color: #ff4d4d ; */
+/* } */
+/* .heart::after { */
+/*   bottom: 12.5px ; */
+/*   left: 0px ; */
+/* } */
+/* .heart::before { */
+/*   top: 0px ; */
+/*   left: -12.5px ; */
+/* } */
+
+/* Styles for empty days at the beginning/end of the month grid */
+.empty-day {
+  visibility: hidden; /* Hide empty cells but keep their space */
+}
