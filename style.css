@@ -16,6 +16,12 @@ body {
     /* min-height: 100vh; */
     /* padding: 20px; */
 }
+/**/
+/* #namesid { */
+/*     font-family: "Lobster", sans-serif; */
+/*     font-weight: 400; */
+/*     font-style: normal; */
+/* } */
 
 /* 1. Define the animation */
 @keyframes fadeInUp {
@@ -41,6 +47,19 @@ body {
    * 'cover 30%' means finish the animation when the element is 30% of the way up the screen.
    */
   animation-range: entry 0% cover 30%; 
+}
+
+#map, #mapbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mapbutton {
+    background-color: #d1d0d0;
+    border-radius: 1rem;
+    padding: 0.625rem;
+    text-decoration: none;
 }
 
 #main-image-container img {
@@ -221,12 +240,31 @@ h1 {
   width: 100%; /* Circle takes full width/height of square cell */
   height: 100%;
   align-content: center;
-  background-image: url('./assets/images/wedding-rings-small.webp');
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: contain; /* Resize the background image to cover the entire container */
-  color: #ea1212;
-  font-size: 0.8rem;
+  display: contents;
+  /* background-image: url('./assets/images/heart.webp'); */
+  /* background-position: center; /* Center the image */ */
+  /* background-repeat: no-repeat; /* Do not repeat the image */ */
+  /* background-size: contain; /* Resize the background image to cover the entire container */ */
+  /* font-size: 1.0rem; */
+}
+
+.circled-date img {
+    position: fixed;
+    width: 4rem;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* The keyframes that control the expanding and shrinking */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Starting size (100%) */
+  }
+  50% {
+    transform: scale(1.15); /* Expands to 115% of its size */
+  }
+  100% {
+    transform: scale(1); /* Shrinks back to original size */
+  }
 }
 /**/
 /* .circled-date p { */
