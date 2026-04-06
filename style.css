@@ -7,8 +7,9 @@
 
 body {
     /* Wedding-themed serif fonts with excellent Cyrillic support for Kazakh */
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-    background-color: #fafafa;
+    /* font-family: 'Cormorant Garamond', 'Playfair Display', serif; */
+    font-family: 'Alice', serif;
+    background-color: #f3f8ff;
     color: #003153; /* Prussian Blue */
     display: flex;
     justify-content: center;
@@ -16,6 +17,7 @@ body {
     /* min-height: 100vh; */
     /* padding: 20px; */
 }
+
 /**/
 /* #namesid { */
 /*     font-family: "Lobster", sans-serif; */
@@ -53,10 +55,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #000000;
 }
 
 #mapbutton {
-    background-color: #d1d0d0;
+    background-color: #ffffff;
     border-radius: 1rem;
     padding: 0.625rem;
     text-decoration: none;
@@ -100,8 +103,7 @@ body {
 
 /* Typography */
 h1 {
-    font-size: 2rem;
-    color: #0f4d92; /* Yale Blue */
+    font-size: 1.4rem;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -109,14 +111,15 @@ h1 {
 
 .subtitle {
     font-size: 1.1rem;
-    color: #007ba7; /* Cerulean */
     margin-bottom: 30px;
-    font-style: italic;
+    color: #000000;
+    /* font-style: italic; */
 }
 
 .names h2 {
     font-size: 2.5rem;
-    color: #000080; /* Deep Navy */
+    font-weight: 100;
+    color: #42567b; /* Deep Navy */
     margin-bottom: 30px;
 }
 
@@ -140,20 +143,22 @@ h1 {
 
 .detail-item h3 {
     font-size: 1.2rem;
-    color: #0f4d92; /* Yale Blue */
+    color: #42567b;
     margin-bottom: 5px;
 }
 
 .detail-item p {
     font-size: 1.1rem;
     line-height: 1.5;
+    color: #000000;
 }
 
 .footer p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: italic;
-    color: #003153; /* Prussian Blue */
-    border-top: 1px solid #007ba7; /* Cerulean */
+    /* color: #003153; /* Prussian Blue */ */
+    color: #42567b;
+    /* border-top: 1px solid #000000; /* Cerulean */ */
     padding: 20px 30px;
     margin: 10px 40px;
     height: 150px;
@@ -166,11 +171,12 @@ h1 {
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .names h2 {
         font-size: 2rem;
+        font-weight: 100;
     }
 
     .detail-item h3 {
@@ -189,6 +195,7 @@ h1 {
 .calendar-card {
       width: 480px;
       background-color: #ffffff; /* White */
+      color: #42567b;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       padding: 25px;
@@ -200,7 +207,7 @@ h1 {
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 1.5em;
-  color: #000080; /* Deep Navy */
+  /* color: #000080; /* Deep Navy */ */
 }
 
 .calendar-grid {
@@ -212,7 +219,7 @@ h1 {
 
 .day-name {
   font-weight: bold;
-  color: #007ba7; /* Cerulean */
+  /* color: #007ba7; /* Cerulean */ */
   padding-bottom: 10px;
   font-size: 0.9em;
 }
